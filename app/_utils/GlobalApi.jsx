@@ -7,6 +7,10 @@ const axiosClient=axios.create({
 const getCategory=()=>axiosClient.get('/categories?populate=*')
 const getSlider=()=>axiosClient.get('/sliders?populate=*')
 
+const getCategoryList=()=>axiosClient.get('/categories?populate=*').then(ress=>{
+    return ress.data.data;
+})
+
 export default{
-    getCategory,getSlider
+    getCategory,getSlider,getCategoryList
 }
