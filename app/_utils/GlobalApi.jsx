@@ -11,6 +11,13 @@ const getCategoryList=()=>axiosClient.get('/categories?populate=*').then(ress=>{
     return ress.data.data;
 })
 
+const getALlProduct=()=>axiosClient.get('/products?populate=*').then(ress=>{
+    return ress.data.data;
+})
+
 export default{
-    getCategory,getSlider,getCategoryList
+    getCategory,
+    getSlider,
+    getCategoryList,
+    getALlProduct
 }
