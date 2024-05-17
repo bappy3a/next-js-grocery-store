@@ -1,6 +1,15 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import React from 'react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ProductItemDeail from './ProductItemDeail'
 
 function ProductItem({product}) {
   return (
@@ -13,7 +22,19 @@ function ProductItem({product}) {
         />
         <h2 className='font-bold text-lg'>{product.attributes.name}</h2>
         <h2 className='font-bold '>${product.attributes.mrp}</h2>
-        <Button className="text-primary hover:text-white hover:bg-primary" variant="outline">Add to cart</Button>
+        
+        {/* Model For Product Details */}
+        <Dialog>
+          <DialogTrigger asChild><Button className="text-primary hover:text-white hover:bg-primary" variant="outline">Add to cart</Button></DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogDescription>
+                <ProductItemDeail product={product}/>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
     </div>
   )
 }
