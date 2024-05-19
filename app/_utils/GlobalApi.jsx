@@ -15,9 +15,14 @@ const getALlProduct=()=>axiosClient.get('/products?populate=*').then(ress=>{
     return ress.data.data;
 })
 
+const getProductByCategoyr=(category)=>axiosClient.get('/products?filters[categorys][name][$in]='+category+'& populate=*').then(ress=>{
+    return ress.data.data;
+})
+
 export default{
     getCategory,
     getSlider,
     getCategoryList,
-    getALlProduct
+    getALlProduct,
+    getProductByCategoyr
 }

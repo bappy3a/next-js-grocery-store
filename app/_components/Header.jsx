@@ -12,6 +12,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import GlobalApi from '../_utils/GlobalApi'
+import Link from 'next/link'
 
 
 function Header() {
@@ -31,7 +32,7 @@ function Header() {
     return (
         <div className='p-5 shadow-sm flex justify-between'>
             <div className='flex items-center gap-8'>
-                <Image src='/logo.png' width={150} height={100} alt='logo' />
+                <Link href={'/'}><Image src='/logo.png' width={150} height={100} alt='logo' /></Link>
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild><h2 className='cursor-pointer hidden md:flex gap-2 items-center border rounded-full p-2 px-10 bg-slate-200'><LayoutGrid className='h-5 w-5' /> Category</h2></DropdownMenuTrigger>
